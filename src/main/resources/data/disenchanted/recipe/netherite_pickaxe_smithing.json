@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "minecraft:netherite_scrap",
+  "base": "minecraft:iron_pickaxe",
+  "result": {
+    "id": "minecraft:netherite_pickaxe"
+  },
+  "template": "disenchanted:overworld_tablet"
+}
