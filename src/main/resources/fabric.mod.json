@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "disenchanted",
+	"version": "${version}",
+	"name": "Disenchanted",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Midget807"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/disenchanted/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+          "net.midget807.disenchanted.DisenchantedMain"
+		],
+		"client": [
+			"net.midget807.disenchanted.DisenchantedClient"
+		],
+		"fabric-datagen": [
+			"net.midget807.disenchanted.DisenchantedDataGenerator"
+		]
+	},
+	"mixins": [
+		"disenchanted.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.20.1",
+		"minecraft": "~26.3",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
