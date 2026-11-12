@@ -2,6 +2,7 @@ package net.midget807.disenchanted.registry;
 
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.midget807.disenchanted.DisenchantedMain;
+import net.midget807.disenchanted.item.CustomSmithingTemplates;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -13,8 +14,8 @@ import java.util.function.Function;
 
 public class DisenchantedItems {
 
-    public static final Item OVERWORLD_TABLET = register("overworld_tablet", Item::new);
-    public static final Item UNDERWORLD_TABLET = register("underworld_tablet", Item::new);
+    public static final Item OVERWORLD_TABLET = register("overworld_tablet", CustomSmithingTemplates::createDiamondUpgradeTemple);
+    public static final Item UNDERWORLD_TABLET = register("underworld_tablet", CustomSmithingTemplates::createDiamondUpgradeTemple);
 
     private static Item register(String name, Function<Item.Properties, Item> function) {
         return Registry.register(BuiltInRegistries.ITEM, DisenchantedMain.id(name),
