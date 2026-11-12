@@ -1,5 +1,6 @@
 package net.midget807.disenchanted.item;
 
+import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.Item;
@@ -8,6 +9,9 @@ import net.minecraft.world.item.SmithingTemplateItem;
 import java.util.List;
 
 public interface CustomSmithingTemplates {
+    ChatFormatting TITLE_FORMAT = ChatFormatting.GRAY;
+    ChatFormatting DESCRIPTION_FORMAT = ChatFormatting.BLUE;
+
     Identifier EMPTY_SLOT_HELMET = Identifier.withDefaultNamespace("container/slot/helmet");
     Identifier EMPTY_SLOT_CHESTPLATE = Identifier.withDefaultNamespace("container/slot/chestplate");
     Identifier EMPTY_SLOT_LEGGINGS = Identifier.withDefaultNamespace("container/slot/leggings");
@@ -27,12 +31,12 @@ public interface CustomSmithingTemplates {
     Identifier EMPTY_SLOT_AMETHYST_SHARD = Identifier.withDefaultNamespace("container/slot/amethyst_shard");
     Identifier EMPTY_SLOT_NAUTILUS_ARMOR = Identifier.withDefaultNamespace("container/slot/nautilus_armor");
     
-    Component DIAMOND_UPGRADE_APPLIES_TO = Component.translatable("item.disenchanted.smithing_template.diamond_upgrade.applies_to");
-    Component DIAMOND_UPGRADE_INGREDIENTS = Component.translatable("item.disenchanted.smithing_template.diamond_upgrade.applies_to");
-    Component DIAMOND_UPGRADE_BASE_SLOT_DESCRIPTION = Component.translatable("item.disenchanted.smithing_template.diamond_upgrade.applies_to");
-    Component DIAMOND_UPGRADE_ADDITIONAL_DESCRIPTION = Component.translatable("item.disenchanted.smithing_template.diamond_upgrade.applies_to");
+    Component DIAMOND_UPGRADE_APPLIES_TO = Component.translatable("item.disenchanted.smithing_template.diamond_upgrade.applies_to").withStyle(DESCRIPTION_FORMAT);
+    Component DIAMOND_UPGRADE_INGREDIENTS = Component.translatable("item.disenchanted.smithing_template.diamond_upgrade.ingredients").withStyle(DESCRIPTION_FORMAT);
+    Component DIAMOND_UPGRADE_BASE_SLOT_DESCRIPTION = Component.translatable("item.disenchanted.smithing_template.diamond_upgrade.base_slot_description");
+    Component DIAMOND_UPGRADE_ADDITIONAL_DESCRIPTION = Component.translatable("item.disenchanted.smithing_template.diamond_upgrade.additional_description");
 
-    static SmithingTemplateItem createDiamondUpgradeTemple(final Item .Properties properties) {
+    static SmithingTemplateItem createDiamondUpgradeTemple(final Item.Properties properties) {
         return new SmithingTemplateItem(
                 DIAMOND_UPGRADE_APPLIES_TO,
                 DIAMOND_UPGRADE_INGREDIENTS,

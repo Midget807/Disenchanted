@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "minecraft:diamond",
+  "base": "minecraft:iron_chestplate",
+  "result": {
+    "id": "minecraft:diamond_chestplate"
+  },
+  "template": "#disenchanted:diamond_smithing_upgrade_templates"
+}

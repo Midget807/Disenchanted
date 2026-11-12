@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "minecraft:diamond",
+  "base": "minecraft:iron_spear",
+  "result": {
+    "id": "minecraft:diamond_spear"
+  },
+  "template": "#disenchanted:diamond_smithing_upgrade_templates"
+}
