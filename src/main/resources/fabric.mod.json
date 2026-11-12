@@ -26,6 +26,9 @@
 		],
 		"fabric-datagen": [
 			"net.midget807.disenchanted.DisenchantedDataGenerator"
+		],
+		"jei_mod_plugin": [
+			"net.midget807.disenchanted.jei.DisenchantedJeiPlugin"
 		]
 	},
 	"mixins": [

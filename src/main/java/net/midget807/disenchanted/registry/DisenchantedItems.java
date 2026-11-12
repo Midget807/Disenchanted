@@ -36,10 +36,5 @@ public class DisenchantedItems {
 
     public static void registerModItems() {
         DisenchantedMain.LOGGER.info("Registering Disenchanted Items");
-
-        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.INGREDIENTS).register(output -> {
-            output.accept(OVERWORLD_TABLET);
-            output.accept(UNDERWORLD_TABLET);
-        });
     }
 }
