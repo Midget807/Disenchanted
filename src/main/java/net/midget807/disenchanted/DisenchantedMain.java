@@ -2,6 +2,7 @@ package net.midget807.disenchanted;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.midget807.disenchanted.registry.DisenchantedItems;
 import net.minecraft.resources.Identifier;
 
 import org.slf4j.Logger;
@@ -22,6 +23,8 @@ public class DisenchantedMain implements ModInitializer {
 		// Proceed with mild caution.
 
 		LOGGER.info("Hello Fabric world!");
+
+		DisenchantedItems.registerModItems();
 	}
 
 	public static Identifier id(String path) {
