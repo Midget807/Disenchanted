@@ -8,8 +8,9 @@
 		"Midget807"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://github.com/Midget807/Disenchanted",
+		"sources": "https://github.com/Midget807/Disenchanted",
+		"issues": "https://github.com/Midget807/Disenchanted/issues"
 	},
 	"license": "MIT",
 	"icon": "assets/disenchanted/icon.png",
