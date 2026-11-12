@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:turtle_scute",
+    "minecraft:armadillo_scute",
+    "minecraft:nautilus_shell"
+  ]
+}
