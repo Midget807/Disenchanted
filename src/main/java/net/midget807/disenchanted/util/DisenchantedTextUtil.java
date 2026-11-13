@@ -6,7 +6,9 @@ import net.minecraft.network.chat.Style;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class DisenchantedTextUtil {
     /** Converts the path of an identifier to capitalized words. <br>
@@ -91,8 +93,10 @@ public class DisenchantedTextUtil {
      * @see #getWrappedText(Component text)
      * */
     public static List<Component> getWrappedText(List<Component> text) {
+        Map<Component, Style> styles = new HashMap<>();
+        text.forEach(component -> styles.put(component, component.getStyle()));
         MutableComponent fullText = Component.empty();
-        text.forEach(fullText::append);
+        text.forEach(component -> fullText.append(component).setStyle(component.getStyle()));
         return getWrappedText(fullText);
     }
 }

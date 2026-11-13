@@ -1,16 +1,12 @@
 package net.midget807.disenchanted.component;
 
-import com.google.common.collect.Lists;
 import com.mojang.blaze3d.platform.InputConstants;
 import com.mojang.serialization.Codec;
 import net.midget807.disenchanted.util.DisenchantedTextUtil;
-import net.minecraft.client.Minecraft;
 import net.minecraft.core.component.DataComponentGetter;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.ComponentSerialization;
-import net.minecraft.network.chat.ComponentUtils;
-import net.minecraft.network.chat.Style;
 import net.minecraft.network.chat.TextColor;
 import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
@@ -30,9 +26,10 @@ public record ExpandableTooltip(List<Component> lines, List<Component> styledLin
     public static final StreamCodec<RegistryFriendlyByteBuf, ExpandableTooltip> STREAM_CODEC = ComponentSerialization.STREAM_CODEC
             .apply(ByteBufCodecs.list(MAX_LINES))
             .map(ExpandableTooltip::new, ExpandableTooltip::lines);
+    public static final ExpandableTooltip DEFAULT = new ExpandableTooltip(List.of(Component.empty()), List.of(Component.empty()));
 
     public ExpandableTooltip(final List<Component> lines) {
-        this(lines, Lists.transform(lines, component -> ComponentUtils.mergeStyles(component, Style.EMPTY)));
+        this(lines, lines);
     }
 
     public ExpandableTooltip {
@@ -41,13 +38,12 @@ public record ExpandableTooltip(List<Component> lines, List<Component> styledLin
         }
     }
 
-    public ItemLore withLines(final Component component) {
-        return new ItemLore(Util.copyAndAdd(this.lines, component));
+    public ExpandableTooltip withLines(final Component component) {
+        return new ExpandableTooltip(Util.copyAndAdd(this.lines, component));
     }
 
     @Override
     public void addToTooltip(Item.TooltipContext context, Consumer<Component> consumer, TooltipFlag flag, DataComponentGetter components) {
-        Minecraft client = Minecraft.getInstance();
         boolean shiftKeyDown = InputConstants.isKeyDown(InputConstants.KEY_LSHIFT) || InputConstants.isKeyDown(InputConstants.KEY_RSHIFT);
         if (shiftKeyDown) {
             DisenchantedTextUtil.getWrappedText(this.styledLines).forEach(consumer);
