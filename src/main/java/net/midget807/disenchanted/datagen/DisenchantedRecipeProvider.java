@@ -44,9 +44,9 @@ public class DisenchantedRecipeProvider extends FabricRecipeProvider {
 
             public void diamondSmithing(final Item base, final RecipeCategory category, final Item result) {
                 SmithingTransformRecipeBuilder.smithing(
-                                this.tag(DisenchantedTags.Items.DIAMOND_SMITHING_UPGRADE_TEMPLATES), Ingredient.of(base), Ingredient.of(Items.DIAMOND), category, result
+                                this.tag(DisenchantedTags.Items.DIAMOND_SMITHING_UPGRADE_TEMPLATES), Ingredient.of(base), Ingredient.of(DisenchantedItems.HEAVY_CRYSTAL), category, result
                         )
-                        .unlocks("has_netherite_ingot", this.has(Items.DIAMOND))
+                        .unlocks("has_netherite_ingot", this.has(DisenchantedItems.HEAVY_CRYSTAL))
                         .save(this.output, getItemName(result) + "_smithing");
             }
         };

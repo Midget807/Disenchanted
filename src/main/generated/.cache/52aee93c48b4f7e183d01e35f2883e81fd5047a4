@@ -1,5 +1,7 @@
 // 26.3	-999999999-01-01T00:00:00	Disenchanted/Model Definitions
+dfeb930a861b24ee2ddd96b832aa0244acd6e7e8 assets/disenchanted/items/heavy_crystal.json
 3144255b87a6bad46860325b14cfd67942318afb assets/disenchanted/items/overworld_tablet.json
 29f5d47a07178c5522a3f2c194037fb0db9ed900 assets/disenchanted/items/underworld_tablet.json
+2cfc30715a10fd336f0780cbe975040bdfd20c9d assets/disenchanted/models/item/heavy_crystal.json
 1d034be2667a5ff779f1ccdef4547bc8ef2c9530 assets/disenchanted/models/item/overworld_tablet.json
 fc10e4afa0828c4c8cd5b9a7580d063ab10f95e9 assets/disenchanted/models/item/underworld_tablet.json

@@ -20,6 +20,7 @@ public class DisenchantedItems {
 
     public static final Item OVERWORLD_TABLET = register("overworld_tablet", CustomSmithingTemplates::createDiamondUpgradeTemple);
     public static final Item UNDERWORLD_TABLET = register("underworld_tablet", CustomSmithingTemplates::createDiamondUpgradeTemple);
+    public static final Item HEAVY_CRYSTAL = register("heavy_crystal", Item::new);
 
     private static Item register(String name, Function<Item.Properties, Item> function) {
         Identifier id = DisenchantedMain.id(name);

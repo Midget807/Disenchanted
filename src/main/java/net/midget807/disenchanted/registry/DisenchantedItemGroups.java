@@ -14,6 +14,7 @@ public class DisenchantedItemGroups {
 
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.INGREDIENTS).register(output -> {
             output.insertBefore(NETHERITE_UPGRADE_SMITHING_TEMPLATE, OVERWORLD_TABLET, UNDERWORLD_TABLET);
+            output.insertBefore(NETHERITE_INGOT,HEAVY_CRYSTAL);
         });
     }
 }

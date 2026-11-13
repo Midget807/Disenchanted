@@ -1,6 +1,6 @@
 {
   "type": "minecraft:smithing_transform",
-  "addition": "minecraft:diamond",
+  "addition": "disenchanted:heavy_crystal",
   "base": "minecraft:iron_hoe",
   "result": {
     "id": "minecraft:diamond_hoe"

@@ -21,9 +21,9 @@ public class DisenchantedLangProvider extends FabricLanguageProvider {
         });
 
         addSmithingTooltips(translationBuilder, "diamond_upgrade.applies_to", "Iron Equipment");
-        addSmithingTooltips(translationBuilder, "diamond_upgrade.ingredients", "Diamond");
+        addSmithingTooltips(translationBuilder, "diamond_upgrade.ingredients", "Heavy Crystal");
         addSmithingTooltips(translationBuilder, "diamond_upgrade.base_slot_description", "Add iron armor, weapon, or tool");
-        addSmithingTooltips(translationBuilder, "diamond_upgrade.additional_description", "Add Diamond");
+        addSmithingTooltips(translationBuilder, "diamond_upgrade.additional_description", "Add Heavy Crystal");
     }
 
     /** Adds translation for Smithing Template tooltips. Uses the prepended string of <blockquote><pre>"item.disenchanted.smithing_template."</pre></blockquote>. <br>
