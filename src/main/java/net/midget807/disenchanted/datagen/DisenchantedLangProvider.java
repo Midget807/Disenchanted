@@ -3,7 +3,7 @@ package net.midget807.disenchanted.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.midget807.disenchanted.registry.DisenchantedItems;
-import net.midget807.disenchanted.util.DisenchantedStringUtil;
+import net.midget807.disenchanted.util.DisenchantedTextUtil;
 import net.minecraft.core.HolderLookup;
 
 import java.util.concurrent.CompletableFuture;
@@ -16,7 +16,7 @@ public class DisenchantedLangProvider extends FabricLanguageProvider {
     @Override
     public void generateTranslations(HolderLookup.Provider provider, TranslationBuilder translationBuilder) {
         DisenchantedItems.ITEMS.forEach((identifier, item) -> {
-            String output = DisenchantedStringUtil.convertPathNameToName(identifier.getPath());
+            String output = DisenchantedTextUtil.convertPathNameToName(identifier.getPath());
             translationBuilder.add(item, output);
         });
 
