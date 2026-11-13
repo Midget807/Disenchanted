@@ -24,6 +24,11 @@ public class DisenchantedLangProvider extends FabricLanguageProvider {
         addSmithingTooltips(translationBuilder, "diamond_upgrade.ingredients", "Heavy Crystal");
         addSmithingTooltips(translationBuilder, "diamond_upgrade.base_slot_description", "Add iron armor, weapon, or tool");
         addSmithingTooltips(translationBuilder, "diamond_upgrade.additional_description", "Add Heavy Crystal");
+
+        addLore(translationBuilder, "overworld_tablet_line1", " ");
+        addLore(translationBuilder, "overworld_tablet_line2", "Contains the artisanal secret of");
+        addLore(translationBuilder, "overworld_tablet_line3", "alloying iron with dense crystal");
+
     }
 
     /** Adds translation for Smithing Template tooltips. Uses the prepended string of <blockquote><pre>"item.disenchanted.smithing_template."</pre></blockquote>. <br>
@@ -36,5 +41,9 @@ public class DisenchantedLangProvider extends FabricLanguageProvider {
      * */
     public static void addSmithingTooltips(TranslationBuilder translationBuilder, String append, String translation) {
         translationBuilder.add("item.disenchanted.smithing_template.".concat(append), translation);
+    }
+
+    public static void addLore(TranslationBuilder translationBuilder, String append, String translation) {
+        translationBuilder.add("item.disenchanted.lore.".concat(append), translation);
     }
 }

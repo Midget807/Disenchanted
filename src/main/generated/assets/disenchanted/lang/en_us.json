@@ -1,5 +1,8 @@
 {
   "item.disenchanted.heavy_crystal": "Heavy Crystal",
+  "item.disenchanted.lore.overworld_tablet_line1": " ",
+  "item.disenchanted.lore.overworld_tablet_line2": "Contains the artisanal secret of",
+  "item.disenchanted.lore.overworld_tablet_line3": "alloying iron with dense crystal",
   "item.disenchanted.overworld_tablet": "Overworld Tablet",
   "item.disenchanted.smithing_template.diamond_upgrade.additional_description": "Add Heavy Crystal",
   "item.disenchanted.smithing_template.diamond_upgrade.applies_to": "Iron Equipment",

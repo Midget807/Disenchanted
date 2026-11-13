@@ -2,6 +2,7 @@ package net.midget807.disenchanted;
 
 import net.fabricmc.api.ModInitializer;
 import net.midget807.disenchanted.event.DefaultItemComponentListener;
+import net.midget807.disenchanted.event.DisenchantedItemComponentListener;
 import net.midget807.disenchanted.registry.DisenchantedItemGroups;
 import net.midget807.disenchanted.registry.DisenchantedItems;
 import net.minecraft.resources.Identifier;
@@ -29,6 +30,7 @@ public class DisenchantedMain implements ModInitializer {
 		DisenchantedItemGroups.registerModItemGroups();
 
 		DefaultItemComponentListener.execute();
+		DisenchantedItemComponentListener.execute();
 	}
 
 	public static Identifier id(String path) {
