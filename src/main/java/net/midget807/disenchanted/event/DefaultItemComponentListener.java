@@ -31,6 +31,11 @@ public class DefaultItemComponentListener {
             context.modify(Items.COPPER_LEGGINGS, builder -> modifyCopperLeggings(builder));
             context.modify(Items.COPPER_CHESTPLATE, builder -> modifyCopperChestplate(builder));
             context.modify(Items.COPPER_HELMET, builder -> modifyCopperHelmet(builder));
+
+            context.modify(Items.GOLDEN_BOOTS, builder -> modifyGoldenBoots(builder));
+            context.modify(Items.GOLDEN_LEGGINGS, builder -> modifyGoldenLeggings(builder));
+            context.modify(Items.GOLDEN_CHESTPLATE, builder -> modifyGoldenChestplate(builder));
+            context.modify(Items.GOLDEN_HELMET, builder -> modifyGoldenHelmet(builder));
         });
     }
 
@@ -202,7 +207,7 @@ public class DefaultItemComponentListener {
 
                         Attributes.WATER_MOVEMENT_EFFICIENCY,
                         new AttributeModifier(
-                                DisenchantedMain.id("depth_strider"),
+                                DisenchantedMain.id("depth_strider_boots"),
                                 0.5,
                                 AttributeModifier.Operation.ADD_VALUE
                         ),
@@ -238,7 +243,7 @@ public class DefaultItemComponentListener {
                 ).add(
                         Attributes.WATER_MOVEMENT_EFFICIENCY,
                         new AttributeModifier(
-                                DisenchantedMain.id("strider"),
+                                DisenchantedMain.id("depth_strider_leggings"),
                                 0.5,
                                 AttributeModifier.Operation.ADD_VALUE
                         ),
@@ -313,6 +318,169 @@ public class DefaultItemComponentListener {
                         new AttributeModifier(
                                 DisenchantedMain.id("respiration"),
                                 3,
+                                AttributeModifier.Operation.ADD_VALUE
+                        ),
+                        EquipmentSlotGroup.HEAD
+                )
+                .build()
+        );
+
+        builder.set(DataComponents.UNBREAKABLE, Unit.INSTANCE);
+
+        builder.set(
+                DataComponents.TOOLTIP_DISPLAY,
+                builder.getOrDefault(DataComponents.TOOLTIP_DISPLAY, TooltipDisplay.DEFAULT)
+                        .withHidden(DataComponents.UNBREAKABLE, true)
+        );
+    }
+
+
+    //Golden Armour
+    private static void modifyGoldenBoots(DataComponentMap.Builder builder) {
+        builder.set(DataComponents.ITEM_NAME, Component.literal("Hermes' Boots"));
+        builder.set(DataComponents.LORE, new ItemLore(List.of(
+                Component.translatable("item.minecraft.golden_boots").withStyle(Style.EMPTY.withColor(ChatFormatting.DARK_GRAY).withItalic(false))
+        )));
+
+        builder.set(DataComponents.ATTRIBUTE_MODIFIERS, ItemAttributeModifiers.builder()
+                .add(
+                        Attributes.ARMOR,
+                        new AttributeModifier(
+                                DisenchantedMain.id("armour_boots"),
+                                2,
+                                AttributeModifier.Operation.ADD_VALUE
+                        ),
+                        EquipmentSlotGroup.FEET
+                ).add(
+                        Attributes.MOVEMENT_SPEED,
+                        new AttributeModifier(
+                                DisenchantedMain.id("speed_boots"),
+                                0.005,
+                                AttributeModifier.Operation.ADD_VALUE
+                        ),
+                        EquipmentSlotGroup.FEET
+                ).add(
+                        Attributes.MOVEMENT_EFFICIENCY,
+                        new AttributeModifier(
+                                DisenchantedMain.id("soul_speed"),
+                                1,
+                                AttributeModifier.Operation.ADD_VALUE
+                        ),
+                        EquipmentSlotGroup.FEET
+                )
+                .build()
+        );
+
+        builder.set(DataComponents.UNBREAKABLE, Unit.INSTANCE);
+
+        builder.set(
+                DataComponents.TOOLTIP_DISPLAY,
+                builder.getOrDefault(DataComponents.TOOLTIP_DISPLAY, TooltipDisplay.DEFAULT)
+                        .withHidden(DataComponents.UNBREAKABLE, true)
+        );
+    }
+
+    private static void modifyGoldenLeggings(DataComponentMap.Builder builder) {
+        builder.set(DataComponents.ITEM_NAME, Component.literal("Hermes' Leggings"));
+        builder.set(DataComponents.LORE, new ItemLore(List.of(
+                Component.translatable("item.minecraft.golden_leggings").withStyle(Style.EMPTY.withColor(ChatFormatting.DARK_GRAY).withItalic(false))
+        )));
+
+        builder.set(DataComponents.ATTRIBUTE_MODIFIERS, ItemAttributeModifiers.builder()
+                .add(
+                        Attributes.ARMOR,
+                        new AttributeModifier(
+                                DisenchantedMain.id("armour_leggings"),
+                                3,
+                                AttributeModifier.Operation.ADD_VALUE
+                        ),
+                        EquipmentSlotGroup.LEGS
+                ).add(
+                        Attributes.MOVEMENT_SPEED,
+                        new AttributeModifier(
+                                DisenchantedMain.id("speed_leggings"),
+                                0.01,
+                                AttributeModifier.Operation.ADD_VALUE
+                        ),
+                        EquipmentSlotGroup.LEGS
+                ).add(
+                        Attributes.STEP_HEIGHT,
+                        new AttributeModifier(
+                                DisenchantedMain.id("strider"),
+                                0.4,
+                                AttributeModifier.Operation.ADD_VALUE
+                        ),
+                        EquipmentSlotGroup.LEGS
+                )
+                .build()
+        );
+
+        builder.set(DataComponents.UNBREAKABLE, Unit.INSTANCE);
+
+        builder.set(
+                DataComponents.TOOLTIP_DISPLAY,
+                builder.getOrDefault(DataComponents.TOOLTIP_DISPLAY, TooltipDisplay.DEFAULT)
+                        .withHidden(DataComponents.UNBREAKABLE, true)
+        );
+    }
+
+
+    private static void modifyGoldenChestplate(DataComponentMap.Builder builder) {
+        builder.set(DataComponents.ITEM_NAME, Component.literal("Hermes' Chestplate"));
+        builder.set(DataComponents.LORE, new ItemLore(List.of(
+                Component.translatable("item.minecraft.golden_chestplate").withStyle(Style.EMPTY.withColor(ChatFormatting.DARK_GRAY).withItalic(false))
+        )));
+
+        builder.set(DataComponents.ATTRIBUTE_MODIFIERS, ItemAttributeModifiers.builder()
+                .add(
+                        Attributes.ARMOR,
+                        new AttributeModifier(
+                                DisenchantedMain.id("armour_chestplate"),
+                                5,
+                                AttributeModifier.Operation.ADD_VALUE
+                        ),
+                        EquipmentSlotGroup.CHEST
+                ).add(
+                        Attributes.MOVEMENT_SPEED,
+                        new AttributeModifier(
+                                DisenchantedMain.id("speed_chestplate"),
+                                0.005,
+                                AttributeModifier.Operation.ADD_VALUE
+                        ),
+                        EquipmentSlotGroup.CHEST
+                )
+                .build()
+        );
+
+        builder.set(DataComponents.UNBREAKABLE, Unit.INSTANCE);
+
+        builder.set(
+                DataComponents.TOOLTIP_DISPLAY,
+                builder.getOrDefault(DataComponents.TOOLTIP_DISPLAY, TooltipDisplay.DEFAULT)
+                        .withHidden(DataComponents.UNBREAKABLE, true)
+        );
+    }
+
+    private static void modifyGoldenHelmet(DataComponentMap.Builder builder) {
+        builder.set(DataComponents.ITEM_NAME, Component.literal("Hermes' Helmet"));
+        builder.set(DataComponents.LORE, new ItemLore(List.of(
+                Component.translatable("item.minecraft.golden_helmet").withStyle(Style.EMPTY.withColor(ChatFormatting.DARK_GRAY).withItalic(false))
+        )));
+
+        builder.set(DataComponents.ATTRIBUTE_MODIFIERS, ItemAttributeModifiers.builder()
+                .add(
+                        Attributes.ARMOR,
+                        new AttributeModifier(
+                                DisenchantedMain.id("armour_helmet"),
+                                2,
+                                AttributeModifier.Operation.ADD_VALUE
+                        ),
+                        EquipmentSlotGroup.HEAD
+                ).add(
+                        Attributes.MOVEMENT_SPEED,
+                        new AttributeModifier(
+                                DisenchantedMain.id("speed_helmet"),
+                                0.005,
                                 AttributeModifier.Operation.ADD_VALUE
                         ),
                         EquipmentSlotGroup.HEAD
