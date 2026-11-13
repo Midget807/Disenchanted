@@ -21,6 +21,13 @@ public class DisenchantedModelProvider extends FabricModelProvider {
     public void generateItemModels(ItemModelGenerators itemModelGenerators) {
         itemModelGenerators.generateFlatItem(DisenchantedItems.OVERWORLD_TABLET, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(DisenchantedItems.UNDERWORLD_TABLET, ModelTemplates.FLAT_ITEM);
+
         itemModelGenerators.generateFlatItem(DisenchantedItems.HEAVY_CRYSTAL, ModelTemplates.FLAT_ITEM);
+
+        itemModelGenerators.generateFlatItem(DisenchantedItems.CUT_LEATHER, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(DisenchantedItems.COPPER_PLATING, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(DisenchantedItems.GOLDEN_PLATING, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(DisenchantedItems.CHAIN_MAIL, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(DisenchantedItems.REINFORCED_IRON_PLATING, ModelTemplates.FLAT_ITEM);
     }
 }

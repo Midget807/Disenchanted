@@ -20,7 +20,15 @@ public class DisenchantedItems {
 
     public static final Item OVERWORLD_TABLET = register("overworld_tablet", CustomSmithingTemplates::createDiamondUpgradeTemple);
     public static final Item UNDERWORLD_TABLET = register("underworld_tablet", CustomSmithingTemplates::createDiamondUpgradeTemple);
+
     public static final Item HEAVY_CRYSTAL = register("heavy_crystal", Item::new);
+
+    public static final Item CUT_LEATHER = register("cut_leather", Item::new);
+    public static final Item COPPER_PLATING = register("copper_plating", Item::new);
+    public static final Item GOLDEN_PLATING = register("golden_plating", Item::new);
+    public static final Item CHAIN_MAIL = register("chain_mail", Item::new);
+    public static final Item REINFORCED_IRON_PLATING = register("reinforced_iron_plating", Item::new);
+
 
     private static Item register(String name, Function<Item.Properties, Item> function) {
         Identifier id = DisenchantedMain.id(name);

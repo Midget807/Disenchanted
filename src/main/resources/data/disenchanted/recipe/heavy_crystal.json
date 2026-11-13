@@ -2,13 +2,13 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "A": "minecraft:diamond",
-    "#": "minecraft:amethyst_shard"
+    "D": "minecraft:diamond",
+    "A": "minecraft:amethyst_shard"
   },
   "pattern": [
-    " A ",
-    "A#A",
-    " A "
+    " D ",
+    "DAD",
+    " D "
   ],
   "result": {
     "id": "disenchanted:heavy_crystal",

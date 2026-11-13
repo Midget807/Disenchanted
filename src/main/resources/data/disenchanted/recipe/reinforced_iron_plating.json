@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "X": "minecraft:iron_ingot",
+    "#": "minecraft:iron_block",
+    "D": "minecraft:diamond"
+  },
+  "pattern": [
+    "DX ",
+    "X#X",
+    " XD"
+  ],
+  "result": {
+    "id": "disenchanted:reinforced_iron_plating",
+    "count": 6
+  }
+}
