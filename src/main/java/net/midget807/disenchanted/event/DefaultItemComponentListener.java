@@ -13,6 +13,7 @@ import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.item.component.ItemLore;
 import net.minecraft.world.item.component.TooltipDisplay;
@@ -36,6 +37,21 @@ public class DefaultItemComponentListener {
             context.modify(Items.GOLDEN_LEGGINGS, builder -> modifyGoldenLeggings(builder));
             context.modify(Items.GOLDEN_CHESTPLATE, builder -> modifyGoldenChestplate(builder));
             context.modify(Items.GOLDEN_HELMET, builder -> modifyGoldenHelmet(builder));
+
+            context.modify(Items.CHAINMAIL_BOOTS, builder -> modifyChainmailBoots(builder));
+            context.modify(Items.CHAINMAIL_LEGGINGS, builder -> modifyChainmailLeggings(builder));
+            context.modify(Items.CHAINMAIL_CHESTPLATE, builder -> modifyChainmailChestplate(builder));
+            context.modify(Items.CHAINMAIL_HELMET, builder -> modifyChainmailHelmet(builder));
+
+            context.modify(Items.IRON_BOOTS, builder -> modifyIronBoots(builder));
+            context.modify(Items.IRON_LEGGINGS, builder -> modifyIronLeggings(builder));
+            context.modify(Items.IRON_CHESTPLATE, builder -> modifyIronChestplate(builder));
+            context.modify(Items.IRON_HELMET, builder -> modifyIronHelmet(builder));
+
+            context.modify(Items.DIAMOND_BOOTS, builder -> modifyDiamondBoots(builder));
+            context.modify(Items.DIAMOND_LEGGINGS, builder -> modifyDiamondLeggings(builder));
+            context.modify(Items.DIAMOND_CHESTPLATE, builder -> modifyDiamondChestplate(builder));
+            context.modify(Items.DIAMOND_HELMET, builder -> modifyDiamondHelmet(builder));
         });
     }
 
@@ -355,8 +371,8 @@ public class DefaultItemComponentListener {
                         Attributes.MOVEMENT_SPEED,
                         new AttributeModifier(
                                 DisenchantedMain.id("speed_boots"),
-                                0.005,
-                                AttributeModifier.Operation.ADD_VALUE
+                                0.05,
+                                AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL
                         ),
                         EquipmentSlotGroup.FEET
                 ).add(
@@ -399,8 +415,8 @@ public class DefaultItemComponentListener {
                         Attributes.MOVEMENT_SPEED,
                         new AttributeModifier(
                                 DisenchantedMain.id("speed_leggings"),
-                                0.01,
-                                AttributeModifier.Operation.ADD_VALUE
+                                0.03,
+                                AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL
                         ),
                         EquipmentSlotGroup.LEGS
                 ).add(
@@ -444,8 +460,8 @@ public class DefaultItemComponentListener {
                         Attributes.MOVEMENT_SPEED,
                         new AttributeModifier(
                                 DisenchantedMain.id("speed_chestplate"),
-                                0.005,
-                                AttributeModifier.Operation.ADD_VALUE
+                                0.05,
+                                AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL
                         ),
                         EquipmentSlotGroup.CHEST
                 )
@@ -480,7 +496,240 @@ public class DefaultItemComponentListener {
                         Attributes.MOVEMENT_SPEED,
                         new AttributeModifier(
                                 DisenchantedMain.id("speed_helmet"),
-                                0.005,
+                                0.03,
+                                AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL
+                        ),
+                        EquipmentSlotGroup.HEAD
+                )
+                .build()
+        );
+
+        builder.set(DataComponents.UNBREAKABLE, Unit.INSTANCE);
+
+        builder.set(
+                DataComponents.TOOLTIP_DISPLAY,
+                builder.getOrDefault(DataComponents.TOOLTIP_DISPLAY, TooltipDisplay.DEFAULT)
+                        .withHidden(DataComponents.UNBREAKABLE, true)
+        );
+    }
+
+
+    //Chainmail Armour
+    private static void modifyChainmailBoots(DataComponentMap.Builder builder) {
+        builder.set(DataComponents.ITEM_NAME, Component.literal("Duelist's Boots"));
+        builder.set(DataComponents.LORE, new ItemLore(List.of(
+                Component.translatable("item.minecraft.chainmail_boots").withStyle(Style.EMPTY.withColor(ChatFormatting.DARK_GRAY).withItalic(false))
+        )));
+
+        builder.set(DataComponents.RARITY, Rarity.COMMON);
+
+        builder.set(DataComponents.UNBREAKABLE, Unit.INSTANCE);
+
+        builder.set(
+                DataComponents.TOOLTIP_DISPLAY,
+                builder.getOrDefault(DataComponents.TOOLTIP_DISPLAY, TooltipDisplay.DEFAULT)
+                        .withHidden(DataComponents.UNBREAKABLE, true)
+        );
+    }
+
+    private static void modifyChainmailLeggings(DataComponentMap.Builder builder) {
+        builder.set(DataComponents.ITEM_NAME, Component.literal("Duelist's Leggings"));
+        builder.set(DataComponents.LORE, new ItemLore(List.of(
+                Component.translatable("item.minecraft.chainmail_leggings").withStyle(Style.EMPTY.withColor(ChatFormatting.DARK_GRAY).withItalic(false))
+        )));
+
+        builder.set(DataComponents.RARITY, Rarity.COMMON);
+
+        builder.set(DataComponents.UNBREAKABLE, Unit.INSTANCE);
+
+        builder.set(
+                DataComponents.TOOLTIP_DISPLAY,
+                builder.getOrDefault(DataComponents.TOOLTIP_DISPLAY, TooltipDisplay.DEFAULT)
+                        .withHidden(DataComponents.UNBREAKABLE, true)
+        );
+    }
+
+
+    private static void modifyChainmailChestplate(DataComponentMap.Builder builder) {
+        builder.set(DataComponents.ITEM_NAME, Component.literal("Duelist's Chestplate"));
+        builder.set(DataComponents.LORE, new ItemLore(List.of(
+                Component.translatable("item.minecraft.chainmail_chestplate").withStyle(Style.EMPTY.withColor(ChatFormatting.DARK_GRAY).withItalic(false))
+        )));
+
+        builder.set(DataComponents.RARITY, Rarity.COMMON);
+
+        builder.set(DataComponents.UNBREAKABLE, Unit.INSTANCE);
+
+        builder.set(
+                DataComponents.TOOLTIP_DISPLAY,
+                builder.getOrDefault(DataComponents.TOOLTIP_DISPLAY, TooltipDisplay.DEFAULT)
+                        .withHidden(DataComponents.UNBREAKABLE, true)
+        );
+    }
+
+    private static void modifyChainmailHelmet(DataComponentMap.Builder builder) {
+        builder.set(DataComponents.ITEM_NAME, Component.literal("Duelist's Helmet"));
+        builder.set(DataComponents.LORE, new ItemLore(List.of(
+                Component.translatable("item.minecraft.chainmail_helmet").withStyle(Style.EMPTY.withColor(ChatFormatting.DARK_GRAY).withItalic(false))
+        )));
+
+        builder.set(DataComponents.RARITY, Rarity.COMMON);
+
+        builder.set(DataComponents.UNBREAKABLE, Unit.INSTANCE);
+
+        builder.set(
+                DataComponents.TOOLTIP_DISPLAY,
+                builder.getOrDefault(DataComponents.TOOLTIP_DISPLAY, TooltipDisplay.DEFAULT)
+                        .withHidden(DataComponents.UNBREAKABLE, true)
+        );
+    }
+
+    //Iron Armour
+    private static void modifyIronBoots(DataComponentMap.Builder builder) {
+        builder.set(DataComponents.ITEM_NAME, Component.literal("Knight's Boots"));
+        builder.set(DataComponents.LORE, new ItemLore(List.of(
+                Component.translatable("item.minecraft.iron_boots").withStyle(Style.EMPTY.withColor(ChatFormatting.DARK_GRAY).withItalic(false))
+        )));
+
+        builder.set(DataComponents.ATTRIBUTE_MODIFIERS, ItemAttributeModifiers.builder()
+                .add(
+                        Attributes.ARMOR,
+                        new AttributeModifier(
+                                DisenchantedMain.id("armour_boots"),
+                                2,
+                                AttributeModifier.Operation.ADD_VALUE
+                        ),
+                        EquipmentSlotGroup.FEET
+                ).add(
+                        Attributes.ARMOR_TOUGHNESS,
+                        new AttributeModifier(
+                                DisenchantedMain.id("toughness_boots"),
+                                2,
+                                AttributeModifier.Operation.ADD_VALUE
+                        ),
+                        EquipmentSlotGroup.FEET
+                )
+                .build()
+        );
+
+        builder.set(DataComponents.UNBREAKABLE, Unit.INSTANCE);
+
+        builder.set(
+                DataComponents.TOOLTIP_DISPLAY,
+                builder.getOrDefault(DataComponents.TOOLTIP_DISPLAY, TooltipDisplay.DEFAULT)
+                        .withHidden(DataComponents.UNBREAKABLE, true)
+        );
+    }
+
+    private static void modifyIronLeggings(DataComponentMap.Builder builder) {
+        builder.set(DataComponents.ITEM_NAME, Component.literal("Knight's Leggings"));
+        builder.set(DataComponents.LORE, new ItemLore(List.of(
+                Component.translatable("item.minecraft.iron_leggings").withStyle(Style.EMPTY.withColor(ChatFormatting.DARK_GRAY).withItalic(false))
+        )));
+
+        builder.set(DataComponents.ATTRIBUTE_MODIFIERS, ItemAttributeModifiers.builder()
+                .add(
+                        Attributes.ARMOR,
+                        new AttributeModifier(
+                                DisenchantedMain.id("armour_leggings"),
+                                5,
+                                AttributeModifier.Operation.ADD_VALUE
+                        ),
+                        EquipmentSlotGroup.LEGS
+                ).add(
+                        Attributes.ARMOR_TOUGHNESS,
+                        new AttributeModifier(
+                                DisenchantedMain.id("toughness_leggings"),
+                                2,
+                                AttributeModifier.Operation.ADD_VALUE
+                        ),
+                        EquipmentSlotGroup.LEGS
+                )
+                .build()
+        );
+
+        builder.set(DataComponents.UNBREAKABLE, Unit.INSTANCE);
+
+        builder.set(
+                DataComponents.TOOLTIP_DISPLAY,
+                builder.getOrDefault(DataComponents.TOOLTIP_DISPLAY, TooltipDisplay.DEFAULT)
+                        .withHidden(DataComponents.UNBREAKABLE, true)
+        );
+    }
+
+
+    private static void modifyIronChestplate(DataComponentMap.Builder builder) {
+        builder.set(DataComponents.ITEM_NAME, Component.literal("Knight's Chestplate"));
+        builder.set(DataComponents.LORE, new ItemLore(List.of(
+                Component.translatable("item.minecraft.iron_chestplate").withStyle(Style.EMPTY.withColor(ChatFormatting.DARK_GRAY).withItalic(false))
+        )));
+
+        builder.set(DataComponents.ATTRIBUTE_MODIFIERS, ItemAttributeModifiers.builder()
+                .add(
+                        Attributes.ARMOR,
+                        new AttributeModifier(
+                                DisenchantedMain.id("armour_chestplate"),
+                                6,
+                                AttributeModifier.Operation.ADD_VALUE
+                        ),
+                        EquipmentSlotGroup.CHEST
+                ).add(
+                        Attributes.ARMOR_TOUGHNESS,
+                        new AttributeModifier(
+                                DisenchantedMain.id("toughness_chestplate"),
+                                2,
+                                AttributeModifier.Operation.ADD_VALUE
+                        ),
+                        EquipmentSlotGroup.CHEST
+                ).add(
+                        Attributes.MOVEMENT_SPEED,
+                        new AttributeModifier(
+                                DisenchantedMain.id("speed_chestplate"),
+                                -0.03,
+                                AttributeModifier.Operation.ADD_MULTIPLIED_BASE
+                        ),
+                        EquipmentSlotGroup.CHEST
+                ).add(
+                        Attributes.ATTACK_DAMAGE,
+                        new AttributeModifier(
+                                DisenchantedMain.id("strength"),
+                                1,
+                                AttributeModifier.Operation.ADD_VALUE
+                        ),
+                        EquipmentSlotGroup.CHEST
+                )
+                .build()
+        );
+
+        builder.set(DataComponents.UNBREAKABLE, Unit.INSTANCE);
+
+        builder.set(
+                DataComponents.TOOLTIP_DISPLAY,
+                builder.getOrDefault(DataComponents.TOOLTIP_DISPLAY, TooltipDisplay.DEFAULT)
+                        .withHidden(DataComponents.UNBREAKABLE, true)
+        );
+    }
+
+    private static void modifyIronHelmet(DataComponentMap.Builder builder) {
+        builder.set(DataComponents.ITEM_NAME, Component.literal("Knight's Helmet"));
+        builder.set(DataComponents.LORE, new ItemLore(List.of(
+                Component.translatable("item.minecraft.iron_helmet").withStyle(Style.EMPTY.withColor(ChatFormatting.DARK_GRAY).withItalic(false))
+        )));
+
+        builder.set(DataComponents.ATTRIBUTE_MODIFIERS, ItemAttributeModifiers.builder()
+                .add(
+                        Attributes.ARMOR,
+                        new AttributeModifier(
+                                DisenchantedMain.id("armour_helmet"),
+                                2,
+                                AttributeModifier.Operation.ADD_VALUE
+                        ),
+                        EquipmentSlotGroup.HEAD
+                ).add(
+                        Attributes.ARMOR_TOUGHNESS,
+                        new AttributeModifier(
+                                DisenchantedMain.id("toughness_helmet"),
+                                2,
                                 AttributeModifier.Operation.ADD_VALUE
                         ),
                         EquipmentSlotGroup.HEAD
@@ -496,5 +745,77 @@ public class DefaultItemComponentListener {
                         .withHidden(DataComponents.UNBREAKABLE, true)
         );
     }
+
+
+    //Diamond Armour
+    private static void modifyDiamondBoots(DataComponentMap.Builder builder) {
+        builder.set(DataComponents.ITEM_NAME, Component.literal("Paladin's Boots"));
+        builder.set(DataComponents.LORE, new ItemLore(List.of(
+                Component.translatable("item.minecraft.diamond_boots").withStyle(Style.EMPTY.withColor(ChatFormatting.DARK_GRAY).withItalic(false))
+        )));
+
+        builder.set(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true);
+
+        builder.set(DataComponents.UNBREAKABLE, Unit.INSTANCE);
+
+        builder.set(
+                DataComponents.TOOLTIP_DISPLAY,
+                builder.getOrDefault(DataComponents.TOOLTIP_DISPLAY, TooltipDisplay.DEFAULT)
+                        .withHidden(DataComponents.UNBREAKABLE, true)
+        );
+    }
+
+    private static void modifyDiamondLeggings(DataComponentMap.Builder builder) {
+        builder.set(DataComponents.ITEM_NAME, Component.literal("Paladin's Leggings"));
+        builder.set(DataComponents.LORE, new ItemLore(List.of(
+                Component.translatable("item.minecraft.diamond_leggings").withStyle(Style.EMPTY.withColor(ChatFormatting.DARK_GRAY).withItalic(false))
+        )));
+
+        builder.set(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true);
+
+        builder.set(DataComponents.UNBREAKABLE, Unit.INSTANCE);
+
+        builder.set(
+                DataComponents.TOOLTIP_DISPLAY,
+                builder.getOrDefault(DataComponents.TOOLTIP_DISPLAY, TooltipDisplay.DEFAULT)
+                        .withHidden(DataComponents.UNBREAKABLE, true)
+        );
+    }
+
+
+    private static void modifyDiamondChestplate(DataComponentMap.Builder builder) {
+        builder.set(DataComponents.ITEM_NAME, Component.literal("Paladin's Chestplate"));
+        builder.set(DataComponents.LORE, new ItemLore(List.of(
+                Component.translatable("item.minecraft.diamond_chestplate").withStyle(Style.EMPTY.withColor(ChatFormatting.DARK_GRAY).withItalic(false))
+        )));
+
+        builder.set(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true);
+
+        builder.set(DataComponents.UNBREAKABLE, Unit.INSTANCE);
+
+        builder.set(
+                DataComponents.TOOLTIP_DISPLAY,
+                builder.getOrDefault(DataComponents.TOOLTIP_DISPLAY, TooltipDisplay.DEFAULT)
+                        .withHidden(DataComponents.UNBREAKABLE, true)
+        );
+    }
+
+    private static void modifyDiamondHelmet(DataComponentMap.Builder builder) {
+        builder.set(DataComponents.ITEM_NAME, Component.literal("Paladin's Helmet"));
+        builder.set(DataComponents.LORE, new ItemLore(List.of(
+                Component.translatable("item.minecraft.diamond_helmet").withStyle(Style.EMPTY.withColor(ChatFormatting.DARK_GRAY).withItalic(false))
+        )));
+
+        builder.set(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true);
+
+        builder.set(DataComponents.UNBREAKABLE, Unit.INSTANCE);
+
+        builder.set(
+                DataComponents.TOOLTIP_DISPLAY,
+                builder.getOrDefault(DataComponents.TOOLTIP_DISPLAY, TooltipDisplay.DEFAULT)
+                        .withHidden(DataComponents.UNBREAKABLE, true)
+        );
+    }
+
 
 }
