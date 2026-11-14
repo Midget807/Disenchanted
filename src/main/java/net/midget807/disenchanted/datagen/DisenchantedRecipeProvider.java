@@ -8,6 +8,7 @@ import net.minecraft.advancements.Advancement;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.data.recipes.SmithingTransformRecipeBuilder;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.tags.ItemTags;
@@ -16,6 +17,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
 
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 import static net.minecraft.data.recipes.RecipeProvider.getItemName;
@@ -40,6 +42,9 @@ public class DisenchantedRecipeProvider extends FabricRecipeProvider {
                 this.diamondSmithing(Items.IRON_PICKAXE, RecipeCategory.TOOLS, Items.DIAMOND_PICKAXE);
                 this.diamondSmithing(Items.IRON_HOE, RecipeCategory.TOOLS, Items.DIAMOND_HOE);
                 this.diamondSmithing(Items.IRON_SHOVEL, RecipeCategory.TOOLS, Items.DIAMOND_SHOVEL);
+
+                this.shapeless(RecipeCategory.MISC, Items.LEATHER, 1).requires(Items.RABBIT_HIDE, 2).unlockedBy("has_rabbit_hide", this.has(Items.RABBIT_HIDE)).save(this.output);
+                this.shapeless(RecipeCategory.MISC, Items.STRING, 4).requires(ItemTags.WOOL).unlockedBy("has_wool", this.has(ItemTags.WOOL)).save(this.output);
             }
 
             public void diamondSmithing(final Item base, final RecipeCategory category, final Item result) {
