@@ -7,7 +7,6 @@ import net.minecraft.core.component.DataComponentMap;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
-import net.minecraft.network.chat.TextColor;
 import net.minecraft.util.Unit;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -20,6 +19,7 @@ import net.minecraft.world.item.component.TooltipDisplay;
 
 import java.util.List;
 
+@SuppressWarnings("Convert2MethodRef")
 public class DefaultItemComponentListener {
     public static void execute() {
         DefaultItemComponentEvents.MODIFY.register(context -> {

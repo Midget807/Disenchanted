@@ -13,9 +13,20 @@ public class DisenchantedItemGroups {
         DisenchantedMain.LOGGER.info("Registering Disenchanted Item Groups");
 
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.INGREDIENTS).register(output -> {
-            output.insertBefore(NETHERITE_UPGRADE_SMITHING_TEMPLATE, OVERWORLD_TABLET, UNDERWORLD_TABLET);
-            output.insertBefore(NETHERITE_INGOT,HEAVY_CRYSTAL);
-            output.insertBefore(STICK,CUT_LEATHER,COPPER_PLATING,GOLDEN_PLATING,CHAIN_MAIL,REINFORCED_IRON_PLATING);
+            output.insertBefore(NETHERITE_UPGRADE_SMITHING_TEMPLATE,
+                    OVERWORLD_TABLET,
+                    UNDERWORLD_TABLET
+            );
+            output.insertBefore(NETHERITE_INGOT,
+                    HEAVY_CRYSTAL
+            );
+            output.insertBefore(STICK,
+                    CUT_LEATHER,
+                    COPPER_PLATING,
+                    GOLDEN_PLATING,
+                    CHAIN_MAIL,
+                    REINFORCED_IRON_PLATING
+            );
         });
     }
 }
