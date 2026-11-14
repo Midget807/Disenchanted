@@ -52,6 +52,11 @@ public class DefaultItemComponentListener {
             context.modify(Items.DIAMOND_LEGGINGS, builder -> modifyDiamondLeggings(builder));
             context.modify(Items.DIAMOND_CHESTPLATE, builder -> modifyDiamondChestplate(builder));
             context.modify(Items.DIAMOND_HELMET, builder -> modifyDiamondHelmet(builder));
+
+            context.modify(Items.NETHERITE_BOOTS, builder -> modifyNetheriteBoots(builder));
+            context.modify(Items.NETHERITE_LEGGINGS, builder -> modifyNetheriteLeggings(builder));
+            context.modify(Items.NETHERITE_CHESTPLATE, builder -> modifyNetheriteChestplate(builder));
+            context.modify(Items.NETHERITE_HELMET, builder -> modifyNetheriteHelmet(builder));
         });
     }
 
@@ -363,7 +368,7 @@ public class DefaultItemComponentListener {
                         Attributes.ARMOR,
                         new AttributeModifier(
                                 DisenchantedMain.id("armour_boots"),
-                                2,
+                                1,
                                 AttributeModifier.Operation.ADD_VALUE
                         ),
                         EquipmentSlotGroup.FEET
@@ -817,5 +822,222 @@ public class DefaultItemComponentListener {
         );
     }
 
+    //Netherite Armour
+    private static void modifyNetheriteBoots(DataComponentMap.Builder builder) {
+        builder.set(DataComponents.ITEM_NAME, Component.literal("Titan's Boots"));
+        builder.set(DataComponents.LORE, new ItemLore(List.of(
+                Component.translatable("item.minecraft.netherite_boots").withStyle(Style.EMPTY.withColor(ChatFormatting.DARK_GRAY).withItalic(false))
+        )));
+
+        builder.set(DataComponents.ATTRIBUTE_MODIFIERS, ItemAttributeModifiers.builder()
+                .add(
+                        Attributes.ARMOR,
+                        new AttributeModifier(
+                                DisenchantedMain.id("armour_boots"),
+                                3,
+                                AttributeModifier.Operation.ADD_VALUE
+                        ),
+                        EquipmentSlotGroup.FEET
+                ).add(
+                        Attributes.ARMOR_TOUGHNESS,
+                        new AttributeModifier(
+                                DisenchantedMain.id("toughness_boots"),
+                                3,
+                                AttributeModifier.Operation.ADD_VALUE
+                        ),
+                        EquipmentSlotGroup.FEET
+                ).add(
+                        Attributes.MOVEMENT_SPEED,
+                        new AttributeModifier(
+                                DisenchantedMain.id("speed_boots"),
+                                -0.05,
+                                AttributeModifier.Operation.ADD_MULTIPLIED_BASE
+                        ),
+                        EquipmentSlotGroup.FEET
+                ).add(
+                        Attributes.MAX_HEALTH,
+                        new AttributeModifier(
+                                DisenchantedMain.id("health_boots"),
+                                2,
+                                AttributeModifier.Operation.ADD_VALUE
+                        ),
+                        EquipmentSlotGroup.FEET
+                )
+                .build()
+        );
+
+        builder.set(DataComponents.ENCHANTMENT_GLINT_OVERRIDE,true);
+
+        builder.set(DataComponents.UNBREAKABLE, Unit.INSTANCE);
+
+        builder.set(
+                DataComponents.TOOLTIP_DISPLAY,
+                builder.getOrDefault(DataComponents.TOOLTIP_DISPLAY, TooltipDisplay.DEFAULT)
+                        .withHidden(DataComponents.UNBREAKABLE, true)
+        );
+    }
+
+    private static void modifyNetheriteLeggings(DataComponentMap.Builder builder) {
+        builder.set(DataComponents.ITEM_NAME, Component.literal("Titan's Leggings"));
+        builder.set(DataComponents.LORE, new ItemLore(List.of(
+                Component.translatable("item.minecraft.netherite_leggings").withStyle(Style.EMPTY.withColor(ChatFormatting.DARK_GRAY).withItalic(false))
+        )));
+
+        builder.set(DataComponents.ATTRIBUTE_MODIFIERS, ItemAttributeModifiers.builder()
+                .add(
+                        Attributes.ARMOR,
+                        new AttributeModifier(
+                                DisenchantedMain.id("armour_leggings"),
+                                6,
+                                AttributeModifier.Operation.ADD_VALUE
+                        ),
+                        EquipmentSlotGroup.LEGS
+                ).add(
+                        Attributes.ARMOR_TOUGHNESS,
+                        new AttributeModifier(
+                                DisenchantedMain.id("toughness_leggings"),
+                                3,
+                                AttributeModifier.Operation.ADD_VALUE
+                        ),
+                        EquipmentSlotGroup.LEGS
+                ).add(
+                        Attributes.MOVEMENT_SPEED,
+                        new AttributeModifier(
+                                DisenchantedMain.id("speed_leggings"),
+                                -0.05,
+                                AttributeModifier.Operation.ADD_MULTIPLIED_BASE
+                        ),
+                        EquipmentSlotGroup.LEGS
+                ).add(
+                        Attributes.MAX_HEALTH,
+                        new AttributeModifier(
+                                DisenchantedMain.id("health_leggings"),
+                                2,
+                                AttributeModifier.Operation.ADD_VALUE
+                        ),
+                        EquipmentSlotGroup.LEGS
+                )
+                .build()
+        );
+
+        builder.set(DataComponents.ENCHANTMENT_GLINT_OVERRIDE,true);
+
+        builder.set(DataComponents.UNBREAKABLE, Unit.INSTANCE);
+
+        builder.set(
+                DataComponents.TOOLTIP_DISPLAY,
+                builder.getOrDefault(DataComponents.TOOLTIP_DISPLAY, TooltipDisplay.DEFAULT)
+                        .withHidden(DataComponents.UNBREAKABLE, true)
+        );
+    }
+
+
+    private static void modifyNetheriteChestplate(DataComponentMap.Builder builder) {
+        builder.set(DataComponents.ITEM_NAME, Component.literal("Titan's Chestplate"));
+        builder.set(DataComponents.LORE, new ItemLore(List.of(
+                Component.translatable("item.minecraft.netherite_chestplate").withStyle(Style.EMPTY.withColor(ChatFormatting.DARK_GRAY).withItalic(false))
+        )));
+
+        builder.set(DataComponents.ATTRIBUTE_MODIFIERS, ItemAttributeModifiers.builder()
+                .add(
+                        Attributes.ARMOR,
+                        new AttributeModifier(
+                                DisenchantedMain.id("armour_chestplate"),
+                                8,
+                                AttributeModifier.Operation.ADD_VALUE
+                        ),
+                        EquipmentSlotGroup.CHEST
+                ).add(
+                        Attributes.ARMOR_TOUGHNESS,
+                        new AttributeModifier(
+                                DisenchantedMain.id("toughness_chestplate"),
+                                3,
+                                AttributeModifier.Operation.ADD_VALUE
+                        ),
+                        EquipmentSlotGroup.CHEST
+                ).add(
+                        Attributes.MOVEMENT_SPEED,
+                        new AttributeModifier(
+                                DisenchantedMain.id("speed_chestplate"),
+                                -0.05,
+                                AttributeModifier.Operation.ADD_MULTIPLIED_BASE
+                        ),
+                        EquipmentSlotGroup.CHEST
+                ).add(
+                        Attributes.MAX_HEALTH,
+                        new AttributeModifier(
+                                DisenchantedMain.id("health_chestplate"),
+                                2,
+                                AttributeModifier.Operation.ADD_VALUE
+                        ),
+                        EquipmentSlotGroup.CHEST
+                )
+                .build()
+        );
+
+        builder.set(DataComponents.ENCHANTMENT_GLINT_OVERRIDE,true);
+
+        builder.set(DataComponents.UNBREAKABLE, Unit.INSTANCE);
+
+        builder.set(
+                DataComponents.TOOLTIP_DISPLAY,
+                builder.getOrDefault(DataComponents.TOOLTIP_DISPLAY, TooltipDisplay.DEFAULT)
+                        .withHidden(DataComponents.UNBREAKABLE, true)
+        );
+    }
+
+    private static void modifyNetheriteHelmet(DataComponentMap.Builder builder) {
+        builder.set(DataComponents.ITEM_NAME, Component.literal("Titan's Helmet"));
+        builder.set(DataComponents.LORE, new ItemLore(List.of(
+                Component.translatable("item.minecraft.netherite_helmet").withStyle(Style.EMPTY.withColor(ChatFormatting.DARK_GRAY).withItalic(false))
+        )));
+
+        builder.set(DataComponents.ATTRIBUTE_MODIFIERS, ItemAttributeModifiers.builder()
+                .add(
+                        Attributes.ARMOR,
+                        new AttributeModifier(
+                                DisenchantedMain.id("armour_helmet"),
+                                3,
+                                AttributeModifier.Operation.ADD_VALUE
+                        ),
+                        EquipmentSlotGroup.HEAD
+                ).add(
+                        Attributes.ARMOR_TOUGHNESS,
+                        new AttributeModifier(
+                                DisenchantedMain.id("toughness_helmet"),
+                                3,
+                                AttributeModifier.Operation.ADD_VALUE
+                        ),
+                        EquipmentSlotGroup.HEAD
+                ).add(
+                        Attributes.MOVEMENT_SPEED,
+                        new AttributeModifier(
+                                DisenchantedMain.id("speed_helmet"),
+                                -0.05,
+                                AttributeModifier.Operation.ADD_MULTIPLIED_BASE
+                        ),
+                        EquipmentSlotGroup.HEAD
+                ).add(
+                        Attributes.MAX_HEALTH,
+                        new AttributeModifier(
+                                DisenchantedMain.id("health_helmet"),
+                                2,
+                                AttributeModifier.Operation.ADD_VALUE
+                        ),
+                        EquipmentSlotGroup.HEAD
+                )
+                .build()
+        );
+
+        builder.set(DataComponents.ENCHANTMENT_GLINT_OVERRIDE,true);
+
+        builder.set(DataComponents.UNBREAKABLE, Unit.INSTANCE);
+
+        builder.set(
+                DataComponents.TOOLTIP_DISPLAY,
+                builder.getOrDefault(DataComponents.TOOLTIP_DISPLAY, TooltipDisplay.DEFAULT)
+                        .withHidden(DataComponents.UNBREAKABLE, true)
+        );
+    }
 
 }

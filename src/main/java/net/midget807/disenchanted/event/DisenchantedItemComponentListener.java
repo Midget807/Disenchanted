@@ -31,22 +31,20 @@ public class DisenchantedItemComponentListener {
 
     private static void modifyUnderworldTablet(DataComponentMap.Builder builder) {
         builder.set(DisenchantedDataComponents.EXPANDABLE_TOOLTIP, new ExpandableTooltip(List.of(
-                Component.translatable("item.disenchanted.lore.overworld_tablet_line2").append(Component.literal("\\n \\n"))
+                Component.translatable("item.disenchanted.lore.underworld_tablet").withStyle(Style.EMPTY.withColor(ChatFormatting.DARK_GREEN).withItalic(true)).append(Component.literal("\\n \\n"))
         )));
-        builder.set(
-                DisenchantedDataComponents.EXPANDABLE_TOOLTIP,
-                builder.getOrDefault(DisenchantedDataComponents.EXPANDABLE_TOOLTIP, ExpandableTooltip.DEFAULT)
-                        .withLines(
-                                Component.translatable("item.disenchanted.lore.overworld_tablet_line3").withStyle(Style.EMPTY.withColor(ChatFormatting.RED).withBold(true))
-                        )
-        );
+        //builder.set(
+        //        DisenchantedDataComponents.EXPANDABLE_TOOLTIP,
+        //        builder.getOrDefault(DisenchantedDataComponents.EXPANDABLE_TOOLTIP, ExpandableTooltip.DEFAULT)
+        //                .withLines(
+        //                        Component.translatable("item.disenchanted.lore.overworld_tablet_line3").withStyle(Style.EMPTY.withColor(ChatFormatting.RED).withBold(true))
+        //                )
+        //);
     }
 
     private static void modifyOverworldTablet(DataComponentMap.Builder builder) {
-        builder.set(DataComponents.LORE, new ItemLore(List.of(
-                Component.empty(),
-                Component.translatable("item.disenchanted.lore.overworld_tablet_line2").withStyle(Style.EMPTY.withColor(ChatFormatting.DARK_GREEN).withItalic(true)),
-                Component.translatable("item.disenchanted.lore.overworld_tablet_line3").withStyle(Style.EMPTY.withColor(ChatFormatting.DARK_GREEN).withItalic(true))
+        builder.set(DisenchantedDataComponents.EXPANDABLE_TOOLTIP, new ExpandableTooltip(List.of(
+                Component.translatable("item.disenchanted.lore.overworld_tablet").withStyle(Style.EMPTY.withColor(ChatFormatting.DARK_GREEN).withItalic(true)).append(Component.literal("\\n \\n"))
         )));
     }
 }

@@ -23,8 +23,7 @@ public class DisenchantedItemTagProvider extends FabricTagsProvider.ItemTagsProv
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         tag(DIAMOND_SMITHING_UPGRADE_TEMPLATES).add(
-                DisenchantedItems.getResourceKey(DisenchantedItems.OVERWORLD_TABLET),
-                DisenchantedItems.getResourceKey(DisenchantedItems.UNDERWORLD_TABLET)
+                DisenchantedItems.getResourceKey(DisenchantedItems.OVERWORLD_TABLET)
         );
     }
 

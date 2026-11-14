@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "minecraft:netherite_ingot",
+  "base": "minecraft:iron_helmet",
+  "result": {
+    "id": "minecraft:netherite_helmet"
+  },
+  "template": "disenchanted:underworld_tablet"
+}

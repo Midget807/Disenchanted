@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "minecraft:netherite_ingot",
+  "base": "minecraft:iron_leggings",
+  "result": {
+    "id": "minecraft:netherite_leggings"
+  },
+  "template": "disenchanted:underworld_tablet"
+}

@@ -25,9 +25,11 @@ public class DisenchantedLangProvider extends FabricLanguageProvider {
         addSmithingTooltips(translationBuilder, "diamond_upgrade.base_slot_description", "Add iron armor, weapon, or tool");
         addSmithingTooltips(translationBuilder, "diamond_upgrade.additional_description", "Add Heavy Crystal");
 
-        addLore(translationBuilder, "overworld_tablet_line1", " ");
-        addLore(translationBuilder, "overworld_tablet_line2", "Contains the artisanal secret of");
-        addLore(translationBuilder, "overworld_tablet_line3", "alloying iron with dense crystal");
+        addLore(translationBuilder, "overworld_tablet", "Holds the artisanal secret of alloying iron with dense crystal");
+        addLore(translationBuilder, "underworld_tablet", "Holds the ancient secret of smithing with the Forbidden Alloy");
+
+        //addLore(translationBuilder, "overworld_tablet_line2", "Contains the artisanal secret of");
+        //addLore(translationBuilder, "overworld_tablet_line3", "alloying iron with dense crystal");
 
     }
 
