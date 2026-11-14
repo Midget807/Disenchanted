@@ -11,6 +11,7 @@ import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.data.recipes.SmithingTransformRecipeBuilder;
 import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.resources.Identifier;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -32,6 +33,7 @@ public class DisenchantedRecipeProvider extends FabricRecipeProvider {
         return new RecipeProvider(bootstrapContext, bootstrapContext1) {
             @Override
             public void buildRecipes() {
+                /*
                 this.diamondSmithing(Items.IRON_CHESTPLATE, RecipeCategory.COMBAT, Items.DIAMOND_CHESTPLATE);
                 this.diamondSmithing(Items.IRON_LEGGINGS, RecipeCategory.COMBAT, Items.DIAMOND_LEGGINGS);
                 this.diamondSmithing(Items.IRON_HELMET, RecipeCategory.COMBAT, Items.DIAMOND_HELMET);
@@ -42,6 +44,8 @@ public class DisenchantedRecipeProvider extends FabricRecipeProvider {
                 this.diamondSmithing(Items.IRON_PICKAXE, RecipeCategory.TOOLS, Items.DIAMOND_PICKAXE);
                 this.diamondSmithing(Items.IRON_HOE, RecipeCategory.TOOLS, Items.DIAMOND_HOE);
                 this.diamondSmithing(Items.IRON_SHOVEL, RecipeCategory.TOOLS, Items.DIAMOND_SHOVEL);
+                */
+
 
                 this.shapeless(RecipeCategory.MISC, Items.LEATHER, 1).requires(Items.RABBIT_HIDE, 2).unlockedBy("has_rabbit_hide", this.has(Items.RABBIT_HIDE)).save(this.output);
                 this.shapeless(RecipeCategory.MISC, Items.STRING, 4).requires(ItemTags.WOOL).unlockedBy("has_wool", this.has(ItemTags.WOOL)).save(this.output);
@@ -51,7 +55,7 @@ public class DisenchantedRecipeProvider extends FabricRecipeProvider {
                 SmithingTransformRecipeBuilder.smithing(
                                 this.tag(DisenchantedTags.Items.DIAMOND_SMITHING_UPGRADE_TEMPLATES), Ingredient.of(base), Ingredient.of(DisenchantedItems.HEAVY_CRYSTAL), category, result
                         )
-                        .unlocks("has_netherite_ingot", this.has(DisenchantedItems.HEAVY_CRYSTAL))
+                        .unlocks("has_heavy_crystal", this.has(DisenchantedItems.HEAVY_CRYSTAL))
                         .save(this.output, getItemName(result) + "_smithing");
             }
         };
