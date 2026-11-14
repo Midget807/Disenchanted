@@ -19,7 +19,7 @@ public class DisenchantedItems {
     public static final Map<Identifier, Item> ITEMS = new HashMap<>();
 
     public static final Item OVERWORLD_TABLET = register("overworld_tablet", CustomSmithingTemplates::createDiamondUpgradeTemple);
-    public static final Item UNDERWORLD_TABLET = register("underworld_tablet", CustomSmithingTemplates::createDiamondUpgradeTemple);
+    public static final Item UNDERWORLD_TABLET = register("underworld_tablet", CustomSmithingTemplates::createNetheriteUpgradeTemplate);
 
     public static final Item HEAVY_CRYSTAL = register("heavy_crystal", Item::new);
 

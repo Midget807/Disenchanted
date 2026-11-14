@@ -25,8 +25,15 @@ public class DisenchantedLangProvider extends FabricLanguageProvider {
         addSmithingTooltips(translationBuilder, "diamond_upgrade.base_slot_description", "Add iron armor, weapon, or tool");
         addSmithingTooltips(translationBuilder, "diamond_upgrade.additional_description", "Add Heavy Crystal");
 
-        addLore(translationBuilder, "overworld_tablet", "Holds the artisanal secret of alloying iron with dense crystal");
-        addLore(translationBuilder, "underworld_tablet", "Holds the ancient secret of smithing with the Forbidden Alloy");
+        addSmithingTooltips(translationBuilder, "netherite_upgrade.applies_to", "Iron Equipment");
+        addSmithingTooltips(translationBuilder, "netherite_upgrade.ingredients", "Netherite Ingot");
+        addSmithingTooltips(translationBuilder, "netherite_upgrade.base_slot_description", "Add iron armor, weapon, or tool");
+        addSmithingTooltips(translationBuilder, "netherite_upgrade.additional_description", "Add Netherite Ingot");
+
+
+        addLore(translationBuilder, "overworld_tablet", "Holds the artisanal secret of alloying iron with dense crystal.\\n\\nUpgrades Iron gear to Diamond.");
+
+        addLore(translationBuilder, "underworld_tablet", "Holds the ancient secret of smithing with the Forbidden Alloy.\\n\\nUpgrades Iron gear to Netherite.");
 
         //addLore(translationBuilder, "overworld_tablet_line2", "Contains the artisanal secret of");
         //addLore(translationBuilder, "overworld_tablet_line3", "alloying iron with dense crystal");

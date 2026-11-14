@@ -37,6 +37,12 @@ public interface CustomSmithingTemplates {
     Component DIAMOND_UPGRADE_BASE_SLOT_DESCRIPTION = Component.translatable("item.disenchanted.smithing_template.diamond_upgrade.base_slot_description");
     Component DIAMOND_UPGRADE_ADDITIONAL_DESCRIPTION = Component.translatable("item.disenchanted.smithing_template.diamond_upgrade.additional_description");
 
+    Component NETHERITE_UPGRADE_APPLIES_TO = Component.translatable("item.disenchanted.smithing_template.netherite_upgrade.applies_to").withStyle(DESCRIPTION_FORMAT);
+    Component NETHERITE_UPGRADE_INGREDIENTS = Component.translatable("item.disenchanted.smithing_template.netherite_upgrade.ingredients").withStyle(DESCRIPTION_FORMAT);
+    Component NETHERITE_UPGRADE_BASE_SLOT_DESCRIPTION = Component.translatable("item.disenchanted.smithing_template.netherite_upgrade.base_slot_description");
+    Component NETHERITE_UPGRADE_ADDITIONAL_DESCRIPTION = Component.translatable("item.disenchanted.smithing_template.netherite_upgrade.additional_description");
+
+
     static SmithingTemplateItem createDiamondUpgradeTemple(final Item.Properties properties) {
         return new SmithingTemplateItem(
                 DIAMOND_UPGRADE_APPLIES_TO,
@@ -45,6 +51,18 @@ public interface CustomSmithingTemplates {
                 DIAMOND_UPGRADE_ADDITIONAL_DESCRIPTION,
                 createDiamondUpgradeIconList(),
                 createDiamondUpgradeMaterialList(),
+                properties.rarity(Rarity.UNCOMMON)
+        );
+    }
+
+    static SmithingTemplateItem createNetheriteUpgradeTemplate(final Item.Properties properties) {
+        return new SmithingTemplateItem(
+                NETHERITE_UPGRADE_APPLIES_TO,
+                NETHERITE_UPGRADE_INGREDIENTS,
+                NETHERITE_UPGRADE_BASE_SLOT_DESCRIPTION,
+                NETHERITE_UPGRADE_ADDITIONAL_DESCRIPTION,
+                createNetheriteUpgradeIconList(),
+                createNetheriteUpgradeMaterialList(),
                 properties.rarity(Rarity.UNCOMMON)
         );
     }
@@ -65,7 +83,28 @@ public interface CustomSmithingTemplates {
         );
     }
 
+    static List<Identifier> createNetheriteUpgradeIconList() {
+        return List.of(
+                EMPTY_SLOT_HELMET,
+                EMPTY_SLOT_SWORD,
+                EMPTY_SLOT_CHESTPLATE,
+                EMPTY_SLOT_PICKAXE,
+                EMPTY_SLOT_LEGGINGS,
+                EMPTY_SLOT_AXE,
+                EMPTY_SLOT_BOOTS,
+                EMPTY_SLOT_HOE,
+                EMPTY_SLOT_SHOVEL,
+                EMPTY_SLOT_NAUTILUS_ARMOR,
+                EMPTY_SLOT_SPEAR
+        );
+    }
+
     static List<Identifier> createDiamondUpgradeMaterialList() {
         return List.of(EMPTY_SLOT_DIAMOND);
     }
+
+    static List<Identifier> createNetheriteUpgradeMaterialList() {
+        return List.of(EMPTY_SLOT_INGOT);
+    }
+
 }

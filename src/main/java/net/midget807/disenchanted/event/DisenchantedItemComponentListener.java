@@ -31,7 +31,7 @@ public class DisenchantedItemComponentListener {
 
     private static void modifyUnderworldTablet(DataComponentMap.Builder builder) {
         builder.set(DisenchantedDataComponents.EXPANDABLE_TOOLTIP, new ExpandableTooltip(List.of(
-                Component.translatable("item.disenchanted.lore.underworld_tablet").withStyle(Style.EMPTY.withColor(ChatFormatting.DARK_GREEN).withItalic(true)).append(Component.literal("\\n \\n"))
+                Component.translatable("item.disenchanted.lore.underworld_tablet").withStyle(Style.EMPTY.withColor(ChatFormatting.WHITE).withItalic(false)).append(Component.literal("\\n\\n"))
         )));
         //builder.set(
         //        DisenchantedDataComponents.EXPANDABLE_TOOLTIP,
@@ -44,7 +44,7 @@ public class DisenchantedItemComponentListener {
 
     private static void modifyOverworldTablet(DataComponentMap.Builder builder) {
         builder.set(DisenchantedDataComponents.EXPANDABLE_TOOLTIP, new ExpandableTooltip(List.of(
-                Component.translatable("item.disenchanted.lore.overworld_tablet").withStyle(Style.EMPTY.withColor(ChatFormatting.DARK_GREEN).withItalic(true)).append(Component.literal("\\n \\n"))
+                Component.translatable("item.disenchanted.lore.overworld_tablet").withStyle(Style.EMPTY.withColor(ChatFormatting.WHITE).withItalic(false)).append(Component.literal("\\n\\n"))
         )));
     }
 }
