@@ -17,6 +17,7 @@ public class DisenchantedTags {
 
     public static class Items {
         public static final TagKey<Item> DIAMOND_SMITHING_UPGRADE_TEMPLATES = createTag("diamond_smithing_upgrade_templates");
+        public static final TagKey<Item> POTIONS = createTag("potions");
 
         private static TagKey<Item> createTag(String name) {
             return TagKey.create(Registries.ITEM, DisenchantedMain.id(name));

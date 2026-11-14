@@ -3,11 +3,15 @@ package net.midget807.disenchanted;
 import net.fabricmc.api.ModInitializer;
 import net.midget807.disenchanted.event.DefaultItemComponentListener;
 import net.midget807.disenchanted.event.DisenchantedItemComponentListener;
+import net.midget807.disenchanted.event.UseBlockListener;
 import net.midget807.disenchanted.registry.DisenchantedDataComponents;
 import net.midget807.disenchanted.registry.DisenchantedItemGroups;
 import net.midget807.disenchanted.registry.DisenchantedItems;
+import net.midget807.disenchanted.registry.DisenchantedMenus;
+import net.midget807.disenchanted.registry.DisenchantedRecipe;
+import net.midget807.disenchanted.registry.DisenchantedRecipeBookCategories;
+import net.midget807.disenchanted.registry.DisenchantedStats;
 import net.minecraft.resources.Identifier;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -30,9 +34,14 @@ public class DisenchantedMain implements ModInitializer {
 		DisenchantedItems.registerModItems();
 		DisenchantedItemGroups.registerModItemGroups();
 		DisenchantedDataComponents.registerModDataComponents();
+		DisenchantedStats.registerModStats();
+		DisenchantedMenus.registerModMenus();
+		DisenchantedRecipe.registerModRecipes();
+		DisenchantedRecipeBookCategories.registerModRecipeCategories();
 
 		DefaultItemComponentListener.execute();
 		DisenchantedItemComponentListener.execute();
+		UseBlockListener.execute();
 	}
 
 	public static Identifier id(String path) {

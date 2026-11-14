@@ -1,0 +1,10 @@
+{
+  "type": "disenchanted:fletching",
+  "addition1": "minecraft:feather",
+  "addition2": "minecraft:flint",
+  "base": "minecraft:stick",
+  "result": {
+    "count": 16,
+    "id": "minecraft:arrow"
+  }
+}

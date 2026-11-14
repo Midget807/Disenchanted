@@ -2,6 +2,8 @@ package net.midget807.disenchanted.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.midget807.disenchanted.DisenchantedMain;
+import net.midget807.disenchanted.datagen.builder.FletchingCraftingRecipeBuilder;
 import net.midget807.disenchanted.registry.DisenchantedItems;
 import net.midget807.disenchanted.util.DisenchantedTags;
 import net.minecraft.advancements.Advancement;
@@ -46,6 +48,11 @@ public class DisenchantedRecipeProvider extends FabricRecipeProvider {
                 this.diamondSmithing(Items.IRON_SHOVEL, RecipeCategory.TOOLS, Items.DIAMOND_SHOVEL);
                 */
 
+                FletchingCraftingRecipeBuilder.fletching(Ingredient.of(Items.STICK), Ingredient.of(Items.FEATHER), Ingredient.of(Items.FLINT), Items.ARROW, 16)
+                        .unlocks("has_stick", this.has(Items.STICK))
+                        .unlocks("has_feather", has(Items.FEATHER))
+                        .unlocks("has_flint", has(Items.FLINT))
+                        .save(this.output, DisenchantedMain.id(getItemName(Items.ARROW) + "_fletching").toString());
 
                 this.shapeless(RecipeCategory.MISC, Items.LEATHER, 1).requires(Items.RABBIT_HIDE, 2).unlockedBy("has_rabbit_hide", this.has(Items.RABBIT_HIDE)).save(this.output);
                 this.shapeless(RecipeCategory.MISC, Items.STRING, 4).requires(ItemTags.WOOL).unlockedBy("has_wool", this.has(ItemTags.WOOL)).save(this.output);

@@ -1,5 +1,7 @@
 // 26.3	-999999999-01-01T00:00:00	Disenchanted/Disenchanted Recipes
+abbc13ce25367d8a1410cb871e5a14bd93831008 data/disenchanted/advancement/recipes/combat/arrow_fletching.json
 9746ded32733fb1ff7ff04636e2e78b22ae453d2 data/disenchanted/advancement/recipes/misc/leather.json
 86ffa9ce0f01c9a832d09bb1a01eefe8359c89dd data/disenchanted/advancement/recipes/misc/string.json
+dd1347718a27ee79d588c04e2ed58b4e3a684d11 data/disenchanted/recipe/arrow_fletching.json
 5264a742e19d99998ff19b6e9bacde16761e7407 data/disenchanted/recipe/leather.json
 4979517ce1fafb0d85ef5db58ac8f0d2742a54b9 data/disenchanted/recipe/string.json

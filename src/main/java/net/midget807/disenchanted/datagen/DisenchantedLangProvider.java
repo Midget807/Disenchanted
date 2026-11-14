@@ -38,6 +38,9 @@ public class DisenchantedLangProvider extends FabricLanguageProvider {
         //addLore(translationBuilder, "overworld_tablet_line2", "Contains the artisanal secret of");
         //addLore(translationBuilder, "overworld_tablet_line3", "alloying iron with dense crystal");
 
+        translationBuilder.add("container.disenchanted.fletching", "Fletching");
+        translationBuilder.add("container.disenchanted.fletching.missing_base_tooltip", "Add A Base");
+
     }
 
     /** Adds translation for Smithing Template tooltips. Uses the prepended string of <blockquote><pre>"item.disenchanted.smithing_template."</pre></blockquote>. <br>
