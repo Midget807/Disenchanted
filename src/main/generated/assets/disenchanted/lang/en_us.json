@@ -1,5 +1,6 @@
 {
   "container.disenchanted.fletching": "Fletching",
+  "container.disenchanted.fletching.missing_base_tooltip": "Add A Base",
   "item.disenchanted.chain_mail": "Chain Mail",
   "item.disenchanted.copper_plating": "Copper Plating",
   "item.disenchanted.cut_leather": "Cut Leather",
