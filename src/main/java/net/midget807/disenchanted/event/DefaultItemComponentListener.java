@@ -846,6 +846,15 @@ public class DefaultItemComponentListener {
                                 AttributeModifier.Operation.ADD_VALUE
                         ),
                         EquipmentSlotGroup.FEET
+
+                ).add(
+                        Attributes.KNOCKBACK_RESISTANCE,
+                        new AttributeModifier(
+                                DisenchantedMain.id("kbres_boots"),
+                                0.1,
+                                AttributeModifier.Operation.ADD_VALUE
+                        ),
+                        EquipmentSlotGroup.FEET
                 ).add(
                         Attributes.MOVEMENT_SPEED,
                         new AttributeModifier(
@@ -897,6 +906,14 @@ public class DefaultItemComponentListener {
                         new AttributeModifier(
                                 DisenchantedMain.id("toughness_leggings"),
                                 3,
+                                AttributeModifier.Operation.ADD_VALUE
+                        ),
+                        EquipmentSlotGroup.LEGS
+                ).add(
+                        Attributes.KNOCKBACK_RESISTANCE,
+                        new AttributeModifier(
+                                DisenchantedMain.id("kbres_leggings"),
+                                0.1,
                                 AttributeModifier.Operation.ADD_VALUE
                         ),
                         EquipmentSlotGroup.LEGS
@@ -956,6 +973,14 @@ public class DefaultItemComponentListener {
                         ),
                         EquipmentSlotGroup.CHEST
                 ).add(
+                        Attributes.KNOCKBACK_RESISTANCE,
+                        new AttributeModifier(
+                                DisenchantedMain.id("kbres_chestplate"),
+                                0.1,
+                                AttributeModifier.Operation.ADD_VALUE
+                        ),
+                        EquipmentSlotGroup.CHEST
+                ).add(
                         Attributes.MOVEMENT_SPEED,
                         new AttributeModifier(
                                 DisenchantedMain.id("speed_chestplate"),
@@ -1009,6 +1034,15 @@ public class DefaultItemComponentListener {
                                 AttributeModifier.Operation.ADD_VALUE
                         ),
                         EquipmentSlotGroup.HEAD
+                ).add(
+                        Attributes.KNOCKBACK_RESISTANCE,
+                        new AttributeModifier(
+                                DisenchantedMain.id("kbres_helmet"),
+                                0.1,
+                                AttributeModifier.Operation.ADD_VALUE
+                        ),
+                        EquipmentSlotGroup.HEAD
+
                 ).add(
                         Attributes.MOVEMENT_SPEED,
                         new AttributeModifier(
