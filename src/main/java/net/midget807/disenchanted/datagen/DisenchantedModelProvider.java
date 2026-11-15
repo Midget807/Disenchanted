@@ -5,7 +5,11 @@ import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.midget807.disenchanted.registry.DisenchantedItems;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
+import net.minecraft.client.data.models.model.ItemModelUtils;
+import net.minecraft.client.data.models.model.ModelLocationUtils;
 import net.minecraft.client.data.models.model.ModelTemplates;
+import net.minecraft.client.renderer.item.ItemModel;
+import net.minecraft.world.item.Item;
 
 public class DisenchantedModelProvider extends FabricModelProvider {
     public DisenchantedModelProvider(FabricPackOutput output) {
@@ -29,5 +33,13 @@ public class DisenchantedModelProvider extends FabricModelProvider {
         itemModelGenerators.generateFlatItem(DisenchantedItems.GOLDEN_PLATING, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(DisenchantedItems.CHAIN_MAIL, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(DisenchantedItems.REINFORCED_IRON_PLATING, ModelTemplates.FLAT_ITEM);
+
+        this.generateWithCustomHandModel(itemModelGenerators, DisenchantedItems.CHARYBDIS);
+    }
+
+    public void generateWithCustomHandModel(ItemModelGenerators itemModelGenerators, Item item) {
+        ItemModel.Unbaked flatModel = ItemModelUtils.plainModel(itemModelGenerators.createFlatItemModel(item, ModelTemplates.FLAT_ITEM));
+        ItemModel.Unbaked handModel = ItemModelUtils.plainModel(ModelLocationUtils.getModelLocation(item, "_handheld"));
+        itemModelGenerators.itemModelOutput.accept(item, ItemModelGenerators.createFlatModelDispatch(flatModel, handModel));
     }
 }

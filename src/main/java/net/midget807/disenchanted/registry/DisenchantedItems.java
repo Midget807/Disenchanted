@@ -10,6 +10,7 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ToolMaterial;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -28,6 +29,8 @@ public class DisenchantedItems {
     public static final Item GOLDEN_PLATING = register("golden_plating", Item::new);
     public static final Item CHAIN_MAIL = register("chain_mail", Item::new);
     public static final Item REINFORCED_IRON_PLATING = register("reinforced_iron_plating", Item::new);
+
+    public static final Item CHARYBDIS = register("charybdis", properties -> new Item(properties.sword(ToolMaterial.DIAMOND, 3.0F, -2.4F)));
 
 
     private static Item register(String name, Function<Item.Properties, Item> function) {

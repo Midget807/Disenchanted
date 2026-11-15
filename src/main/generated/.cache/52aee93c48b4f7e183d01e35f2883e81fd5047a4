@@ -1,5 +1,6 @@
 // 26.3	-999999999-01-01T00:00:00	Disenchanted/Model Definitions
 60ed6a3e2c3ab36b13abe49c61fd6f23037ba1c9 assets/disenchanted/items/chain_mail.json
+4999df758dd536d60da0c214bef28facde739d8b assets/disenchanted/items/charybdis.json
 9f00691d2178cb27fd5648b9af15bc51f729f8d6 assets/disenchanted/items/copper_plating.json
 cf965151d9ce2ba99965506b9d4790c730bbd6c4 assets/disenchanted/items/cut_leather.json
 b99930aa01e6a3a6776ca69eb3523a31758139d4 assets/disenchanted/items/golden_plating.json
@@ -8,6 +9,7 @@ dfeb930a861b24ee2ddd96b832aa0244acd6e7e8 assets/disenchanted/items/heavy_crystal
 d01f7c682a44299523dd3b2d68943599e577afd4 assets/disenchanted/items/reinforced_iron_plating.json
 29f5d47a07178c5522a3f2c194037fb0db9ed900 assets/disenchanted/items/underworld_tablet.json
 d96f17411183f6a48b514fbb4b78786c5314e39f assets/disenchanted/models/item/chain_mail.json
+5ecb7bab33251617c940cae49f1e18a8b03f3473 assets/disenchanted/models/item/charybdis.json
 9c0c1573b65dc688a86bc72fce6095b2464040e0 assets/disenchanted/models/item/copper_plating.json
 a72fc1ab758b9f77faca4e07da2b7778ef432a84 assets/disenchanted/models/item/cut_leather.json
 b09395dd61b72a121a87a3a5720cd66fc007a0b6 assets/disenchanted/models/item/golden_plating.json
