@@ -37,6 +37,14 @@ public class DisenchantedModelProvider extends FabricModelProvider {
         this.generateWithCustomHandModel(itemModelGenerators, DisenchantedItems.CHARYBDIS);
     }
 
+    /** Generates the 16x16 GUI model and allows for a custom handheld model to be used. Append "_handheld" to assign the desired model JSON.
+     * <blockquote><pre>
+     *     Generated:
+     *     "custom_mod:models/item/custom_item.json" -> GUI
+     *     Manual:
+     *     "custom_mod:models/item/custom_item_handheld.json" -> Handheld
+     * </pre></blockquote>
+     * */
     public void generateWithCustomHandModel(ItemModelGenerators itemModelGenerators, Item item) {
         ItemModel.Unbaked flatModel = ItemModelUtils.plainModel(itemModelGenerators.createFlatItemModel(item, ModelTemplates.FLAT_ITEM));
         ItemModel.Unbaked handModel = ItemModelUtils.plainModel(ModelLocationUtils.getModelLocation(item, "_handheld"));
