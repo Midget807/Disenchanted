@@ -3,13 +3,12 @@
   "category": "equipment",
   "key": {
     "X": "minecraft:iron_ingot",
-    "#": "minecraft:iron_block",
     "D": "minecraft:diamond"
   },
   "pattern": [
-    "DX ",
-    "X#X",
-    " XD"
+    "XX ",
+    "XDX",
+    " XX"
   ],
   "result": {
     "id": "disenchanted:reinforced_iron_plating",

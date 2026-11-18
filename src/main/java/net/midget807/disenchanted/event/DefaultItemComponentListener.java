@@ -420,7 +420,7 @@ public class DefaultItemComponentListener {
                         Attributes.MOVEMENT_SPEED,
                         new AttributeModifier(
                                 DisenchantedMain.id("speed_leggings"),
-                                0.03,
+                                0.05,
                                 AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL
                         ),
                         EquipmentSlotGroup.LEGS
@@ -501,7 +501,7 @@ public class DefaultItemComponentListener {
                         Attributes.MOVEMENT_SPEED,
                         new AttributeModifier(
                                 DisenchantedMain.id("speed_helmet"),
-                                0.03,
+                                0.05,
                                 AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL
                         ),
                         EquipmentSlotGroup.HEAD
@@ -526,6 +526,27 @@ public class DefaultItemComponentListener {
                 Component.translatable("item.minecraft.chainmail_boots").withStyle(Style.EMPTY.withColor(ChatFormatting.DARK_GRAY).withItalic(false))
         )));
 
+        builder.set(DataComponents.ATTRIBUTE_MODIFIERS, ItemAttributeModifiers.builder()
+                .add(
+                        Attributes.ARMOR,
+                        new AttributeModifier(
+                                DisenchantedMain.id("armour_boots"),
+                                1,
+                                AttributeModifier.Operation.ADD_VALUE
+                        ),
+                        EquipmentSlotGroup.FEET
+                ).add(
+                        Attributes.ARMOR_TOUGHNESS,
+                        new AttributeModifier(
+                                DisenchantedMain.id("toughness_boots"),
+                                1,
+                                AttributeModifier.Operation.ADD_VALUE
+                        ),
+                        EquipmentSlotGroup.FEET
+                )
+                .build()
+        );
+
         builder.set(DataComponents.RARITY, Rarity.COMMON);
 
         builder.set(DataComponents.UNBREAKABLE, Unit.INSTANCE);
@@ -542,6 +563,27 @@ public class DefaultItemComponentListener {
         builder.set(DataComponents.LORE, new ItemLore(List.of(
                 Component.translatable("item.minecraft.chainmail_leggings").withStyle(Style.EMPTY.withColor(ChatFormatting.DARK_GRAY).withItalic(false))
         )));
+
+        builder.set(DataComponents.ATTRIBUTE_MODIFIERS, ItemAttributeModifiers.builder()
+                .add(
+                        Attributes.ARMOR,
+                        new AttributeModifier(
+                                DisenchantedMain.id("armour_leggings"),
+                                4,
+                                AttributeModifier.Operation.ADD_VALUE
+                        ),
+                        EquipmentSlotGroup.FEET
+                ).add(
+                        Attributes.ARMOR_TOUGHNESS,
+                        new AttributeModifier(
+                                DisenchantedMain.id("toughness_leggings"),
+                                1,
+                                AttributeModifier.Operation.ADD_VALUE
+                        ),
+                        EquipmentSlotGroup.FEET
+                )
+                .build()
+        );
 
         builder.set(DataComponents.RARITY, Rarity.COMMON);
 
@@ -560,6 +602,27 @@ public class DefaultItemComponentListener {
         builder.set(DataComponents.LORE, new ItemLore(List.of(
                 Component.translatable("item.minecraft.chainmail_chestplate").withStyle(Style.EMPTY.withColor(ChatFormatting.DARK_GRAY).withItalic(false))
         )));
+
+        builder.set(DataComponents.ATTRIBUTE_MODIFIERS, ItemAttributeModifiers.builder()
+                .add(
+                        Attributes.ARMOR,
+                        new AttributeModifier(
+                                DisenchantedMain.id("armour_chestplate"),
+                                5,
+                                AttributeModifier.Operation.ADD_VALUE
+                        ),
+                        EquipmentSlotGroup.FEET
+                ).add(
+                        Attributes.ARMOR_TOUGHNESS,
+                        new AttributeModifier(
+                                DisenchantedMain.id("toughness_chestplate"),
+                                1,
+                                AttributeModifier.Operation.ADD_VALUE
+                        ),
+                        EquipmentSlotGroup.FEET
+                )
+                .build()
+        );
 
         builder.set(DataComponents.RARITY, Rarity.COMMON);
 
@@ -601,7 +664,7 @@ public class DefaultItemComponentListener {
                         Attributes.ARMOR,
                         new AttributeModifier(
                                 DisenchantedMain.id("armour_boots"),
-                                2,
+                                1,
                                 AttributeModifier.Operation.ADD_VALUE
                         ),
                         EquipmentSlotGroup.FEET
@@ -734,7 +797,7 @@ public class DefaultItemComponentListener {
                         Attributes.ARMOR_TOUGHNESS,
                         new AttributeModifier(
                                 DisenchantedMain.id("toughness_helmet"),
-                                2,
+                                1,
                                 AttributeModifier.Operation.ADD_VALUE
                         ),
                         EquipmentSlotGroup.HEAD
@@ -867,7 +930,7 @@ public class DefaultItemComponentListener {
                         Attributes.MAX_HEALTH,
                         new AttributeModifier(
                                 DisenchantedMain.id("health_boots"),
-                                2,
+                                1,
                                 AttributeModifier.Operation.ADD_VALUE
                         ),
                         EquipmentSlotGroup.FEET
@@ -929,7 +992,7 @@ public class DefaultItemComponentListener {
                         Attributes.MAX_HEALTH,
                         new AttributeModifier(
                                 DisenchantedMain.id("health_leggings"),
-                                2,
+                                1,
                                 AttributeModifier.Operation.ADD_VALUE
                         ),
                         EquipmentSlotGroup.LEGS
@@ -992,7 +1055,7 @@ public class DefaultItemComponentListener {
                         Attributes.MAX_HEALTH,
                         new AttributeModifier(
                                 DisenchantedMain.id("health_chestplate"),
-                                2,
+                                1,
                                 AttributeModifier.Operation.ADD_VALUE
                         ),
                         EquipmentSlotGroup.CHEST
@@ -1055,7 +1118,7 @@ public class DefaultItemComponentListener {
                         Attributes.MAX_HEALTH,
                         new AttributeModifier(
                                 DisenchantedMain.id("health_helmet"),
-                                2,
+                                1,
                                 AttributeModifier.Operation.ADD_VALUE
                         ),
                         EquipmentSlotGroup.HEAD
